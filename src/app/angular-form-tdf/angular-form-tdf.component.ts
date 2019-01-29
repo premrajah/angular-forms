@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user';
 
 @Component({
   selector: 'app-angular-form-tdf',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class AngularFormTdfComponent implements OnInit {
 
   topics = ["Angular", "React", "Vue"];
+
+  userModel = new User("Prem", "Prem@gmail.com", 758594562, "", "morning", true);
 
   constructor() { }
 
