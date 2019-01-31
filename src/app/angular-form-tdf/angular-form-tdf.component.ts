@@ -10,7 +10,7 @@ export class AngularFormTdfComponent implements OnInit {
 
   topics = ["Angular", "React", "Vue"];
 
-  userModel = new User("Prem", "Prem@gmail.com", 758594562, "", "morning", true);
+  userModel = new User("", "Prem@gmail.com", 758594562, "", "morning", true);
 
   constructor() { }
 

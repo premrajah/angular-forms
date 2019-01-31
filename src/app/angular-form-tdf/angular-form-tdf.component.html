@@ -7,8 +7,8 @@
 
   <div class="form-group">
     <label>Name</label>
-    <input [(ngModel)]="userModel.name" #name="ngModel" required type="text" name="userName" class="form-control">
-    {{ name.valid }}
+    <input [(ngModel)]="userModel.name" #name="ngModel" required type="text" name="userName" [class.is-invalid]="name.invalid && name.touched"
+      class="form-control">
   </div>
 
   <div class="form-group">
@@ -17,8 +17,10 @@
   </div>
 
   <div class="form-group">
+    <!-- phone number should be 10 digits -->
     <label>Phone</label>
-    <input [(ngModel)]="userModel.phone" type="text" name="phone" class="form-control">
+    <input [(ngModel)]="userModel.phone" #phone="ngModel" pattern="^\d{10}$" [class.is-invalid]="phone.invalid && phone.touched"
+      type="text" name="phone" class="form-control">
   </div>
 
   <div class="form-group">
