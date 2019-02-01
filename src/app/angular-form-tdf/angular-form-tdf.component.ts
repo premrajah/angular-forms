@@ -31,16 +31,16 @@ export class AngularFormTdfComponent implements OnInit {
   }
 
   /// from submit 
-  onSubmit() {
-    this.submitted = true; // to check if form is submitted
-    this._enrollmentService.enroll(this.userModel)
-      .subscribe(
-        data => console.log('Success!', data),
-        // error => console.log('Error!', error)
-        error => this.errorMsg = error.statusText
-      )
-      
+  onSubmit(userForm) {
+    console.log(userForm);
+    // this.submitted = true; // to check if form is submitted
+    // this._enrollmentService.enroll(this.userModel)
+    //   .subscribe(
+    //     data => console.log('Success!', data),
+    //     // error => console.log('Error!', error)
+    //     error => this.errorMsg = error.statusText
+    //   )
   }
-  
+
 
 }
