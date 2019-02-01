@@ -12,6 +12,7 @@ export class AngularFormTdfComponent implements OnInit {
   topics = ["Angular", "React", "Vue"];
   topicHasError = true;
   submitted = false;
+  errorMsg = '';
 
   userModel = new User("", "Prem@gmail.com", 758594562, "default", "morning", true);
 
@@ -35,7 +36,8 @@ export class AngularFormTdfComponent implements OnInit {
     this._enrollmentService.enroll(this.userModel)
       .subscribe(
         data => console.log('Success!', data),
-        error => console.log('Error!', error)
+        // error => console.log('Error!', error)
+        error => this.errorMsg = error.statusText
       )
       
   }

@@ -1,4 +1,6 @@
-
+<div class="alert alert-danger" *ngIf="errorMsg">
+  {{errorMsg}}
+</div>
 
 <form #userForm="ngForm" *ngIf="!submitted" (ngSubmit)="onSubmit()" novalidate>
   <hr>
