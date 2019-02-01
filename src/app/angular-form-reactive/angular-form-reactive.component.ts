@@ -11,7 +11,13 @@ export class AngularFormReactiveComponent implements OnInit {
   registrationForm = new FormGroup({
     userName: new FormControl('Clark Kent'),
     password: new FormControl(''),
-    confirmPassword: new FormControl('')
+    confirmPassword: new FormControl(''),
+    address: new FormGroup({
+      firstLine: new FormControl(''),
+      city: new FormControl(''),
+      county: new FormControl(''),
+      postCode: new FormControl('RH10 1AB')
+    })
   });
 
   constructor() { }

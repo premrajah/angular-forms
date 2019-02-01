@@ -16,6 +16,26 @@
     <input formControlName="confirmPassword" type="password" class="form-control">
   </div>
 
+  <div formGroupName="address">
+      <h2>Address</h2>
+      <div class="form-group">
+          <label>First line</label>
+          <input formControlName="firstLine" type="text" class="form-control">
+        </div>
+    <div class="form-group">
+      <label>City</label>
+      <input formControlName="city" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>County</label>
+      <input formControlName="county" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Postcode</label>
+      <input formControlName="postCode" type="text" class="form-control">
+    </div>
+  </div>
+
   <button type="submit" class="btn btn-primary">Register</button>
 </form>
 
