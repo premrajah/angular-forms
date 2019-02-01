@@ -1,6 +1,6 @@
 
 
-<form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+<form #userForm="ngForm" *ngIf="!submitted" (ngSubmit)="onSubmit()" novalidate>
   <hr>
   {{ userForm.value | json }}
   <hr>

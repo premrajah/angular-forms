@@ -11,6 +11,7 @@ export class AngularFormTdfComponent implements OnInit {
 
   topics = ["Angular", "React", "Vue"];
   topicHasError = true;
+  submitted = false;
 
   userModel = new User("", "Prem@gmail.com", 758594562, "default", "morning", true);
 
@@ -30,6 +31,7 @@ export class AngularFormTdfComponent implements OnInit {
 
   /// from submit 
   onSubmit() {
+    this.submitted = true; // to check if form is submitted
     this._enrollmentService.enroll(this.userModel)
       .subscribe(
         data => console.log('Success!', data),
