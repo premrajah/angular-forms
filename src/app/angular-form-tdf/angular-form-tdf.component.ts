@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
+import { EnrollmentService } from '../enrollment.service';
 
 @Component({
   selector: 'app-angular-form-tdf',
@@ -13,7 +14,7 @@ export class AngularFormTdfComponent implements OnInit {
 
   userModel = new User("", "Prem@gmail.com", 758594562, "default", "morning", true);
 
-  constructor() { }
+  constructor(private _enrollmentService: EnrollmentService) { }
 
   ngOnInit() {
   }
@@ -25,6 +26,16 @@ export class AngularFormTdfComponent implements OnInit {
     } else {
       this.topicHasError = false;
     }
+  }
+
+  /// from submit 
+  onSubmit() {
+    this._enrollmentService.enroll(this.userModel)
+      .subscribe(
+        data => console.log('Success!', data),
+        error => console.log('Error!', error)
+      )
+      
   }
 
 }

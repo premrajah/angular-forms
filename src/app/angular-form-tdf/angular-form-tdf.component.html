@@ -1,4 +1,6 @@
-<form #userForm="ngForm">
+
+
+<form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
   <hr>
   {{ userForm.value | json }}
   <hr>
